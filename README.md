@@ -1,0 +1,2 @@
+# SNAKE
+Zadanie na zaliczenie 
