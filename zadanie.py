@@ -95,3 +95,31 @@ def gameloop():
                         foody = round (random.randrange (0, wysokosc - snake_blok) / 10.0) * 10
 
                         gameloop()
+for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    game_over = True
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_LEFT:
+                        x1_change = -snake_blok
+                        y1_change = 0
+                    elif event.key == pygame.K_RIGHT:
+                        x1_change = snake_blok
+                        y1_change = 0
+                    elif event.key == pygame.K_UP:
+                        y1_change = -snake_blok
+                        x1_change = 0
+                    elif event.key == pygame.K_DOWN:
+                        y1_change = snake_blok
+                        x1_change = 0
+                    elif event.key == pygame.K_p:
+                        game_pause = not game_pause
+
+        if game_pause:
+            wiadomosc("Nacisnij P aby wznowic",red , szerokosc / 6, wysokosc / 3 )
+            pygame.display.update()
+            continue
+
+
+        if x1 > szerokosc or x1 < 0 or  y1 > wysokosc or y1 < 0:
+            game_close = True
+
