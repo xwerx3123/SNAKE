@@ -59,7 +59,7 @@ def gameloop():
 
     while not game_start:
 
-        wiadomosc("wcisnij S aby rozpoaczac, wcisnij P aby zatrzymac ", red, szerokosc / 5s, wysokosc / 3,)
+        wiadomosc("wcisnij S aby rozpoaczac, wcisnij P aby zatrzymac ", red, szerokosc / 5, wysokosc / 4)
         pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
