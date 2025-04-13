@@ -34,7 +34,24 @@ def punktacja(score, screen):
 
 
 def gameloop():
-    """Pętla gry odpowiedzialna za mechanikę gry"""
+    """
+    Pętla główna gry Snake, odpowiadająca za kontrolę stanu gry, renderowanie oraz logikę poruszania węża i kolizji.
+
+    Funkcja obsługuje:
+    - Ekran początkowy z instrukcją startu
+    - Główne zdarzenia gry (sterowanie wężem, zatrzymanie gry)
+    - Kolizje z granicami i samym sobą
+    - Logikę wzrostu węża po zjedzeniu jedzenia
+    - Wygraną po osiągnięciu określonej długości węża
+    - Pauzę gry i restart po przegranej
+
+    Używa globalnych klas/zmiennych:
+    - GameProperties – zawiera ustawienia gry (rozmiar ekranu, kolory, prędkość węża)
+    - screen – obiekt ekranu Pygame
+    - clock – zegar Pygame do kontrolowania liczby klatek
+    - funkcji pomocniczych: wiadomosc(), snake(), punktacja()
+    """
+    
     game_over = False
     game_close = False
     game_pause = False
