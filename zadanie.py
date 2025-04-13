@@ -24,21 +24,25 @@ styl_czcionki = pygame.font.SysFont("comicsans", 30)
 
 
 def snake(snake_blok, snake_list):
+    '''Funkcja odpowiadająca z rysowanie naszego węża'''
     for x in snake_list:
         pygame.draw.rect(screen, green, (x[0], x[1], snake_blok, snake_blok))
 
 
 def wiadomosc(msg, kolor, x, y):
+    """Wykorzystywana do wyświetlenia wiadomości użytkownikowi"""
     mesg = styl_czcionki.render(msg, True, kolor)
     screen.blit(mesg, (x, y))
 
 
 def punktacja(score, screen):
+    """Wykorzystywana do wyświetlenia końcowej"""
     value = styl_czcionki.render(f"Punktacja:  {score}", True, red)
     screen.blit(value, (szerokosc - 250, 10))
 
 
 def gameloop():
+    """Pętla gry odpowiedzialna za mechanikę gry"""
     game_over = False
     game_close = False
     game_pause = False
